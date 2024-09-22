@@ -1,4 +1,4 @@
-# Codeforces Solutions
+# Resoluções Codeforces 
 
 ## Descrição
 Este repositório contém as minhas soluções para problemas do Codeforces. Os códigos estão organizados por número de problema e nível de dificuldade.
