@@ -1,11 +1,11 @@
-# Resoluções Codeforces 
+# Codeforces Solutions 
 
-## Descrição
-Este repositório contém as minhas soluções para problemas do Codeforces. Os códigos estão organizados por número de problema e nível de dificuldade.
+## Description  
+This repository contains my solutions to Codeforces problems. The codes are organized by problem number and difficulty level.  
 
-## Estrutura
-- Cada arquivo tem o nome no formato `[numero-do-problema][nivel].extensão` (ex: `123A.py`).
-- Os problemas mais difíceis são organizados em pastas específicas.
+## Structure  
+- Each file is named in the format `[problem-number][level].extension` (e.g., `123A.py`).  
+- The most challenging problems are organized into specific folders.  
 
-## Tecnologias
-- Linguagens usadas: C++, Python.
+## Technologies  
+- Languages used: C++, Python.  
