@@ -1,13 +1,7 @@
-n_m = input().split()
-n_m = [int(i) for i in n_m]
-par = 0 
-
-alfa = n_m[0] - n_m[1] 
-
-if -2 < alfa < 2 :
-    par += 1
-
-
-
-
-print(par)
+n,m = list(map(int,input().split()))
+count = 0
+for b in range(0,n+1):
+    for a in range(0,m+1):
+        if a**2 + b == n and a + b**2 == m:
+            count += 1
+print(count)
