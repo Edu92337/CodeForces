@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define pb push_back
+#define mp make_pair
+#define all(x) (x).begin(), (x).end()
+#define fo(i,n) for(int i = 0; i < n; i++)
+#define _ ios_base::sync_with_stdio(0);cin.tie(0);
+#define endl '\n'
+
+int main() {_
+    int n;
+    cin >> n;
+    unordered_set<int>mesa;
+    int t = 0;
+    fo(i,2*n){
+        int meia;
+        cin >> meia;
+        if(mesa.count(meia)) mesa.erase(meia);
+        else mesa.insert(meia);
+        if(mesa.size()>t) t = mesa.size();
+    }cout <<t<<endl;
+    return 0;
+}
