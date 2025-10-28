@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define pb push_back
+#define mp make_pair
+#define all(x) (x).begin(), (x).end()
+#define fo(i,n) for(int i = 0; i < n; i++)
+#define _ ios_base::sync_with_stdio(0);cin.tie(0);
+#define endl '\n'
+
+int main() {_
+    int n,k;cin >> n >> k;
+    for(int i = 0;i<n;i++){
+        for(int j = 0;j<n;j++){
+            if(i==j)cout <<k<<' ';
+            else cout << 0<<' ';
+        }cout <<endl;
+    }
+    return 0;
+}
