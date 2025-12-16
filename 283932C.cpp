@@ -5,32 +5,36 @@ using namespace std;
 #define mp make_pair
 #define all(x) (x).begin(), (x).end()
 #define fo(i,n) for(int i = 0; i < n; i++)
-#define _ ios_base::sync_with_stdio(0);cin.tie(0);
+#define _ ios_base::sync_with_stdio(0); cin.tie(0);
 #define endl '\n'
 
-bool check(int n, int x,int y,int qnt){
-    
+/*
+l = 1,r=4
+mid = 2  ->2/1+2/1 = 4 ok
+l =1 ,r = 2
+mid = 2
+
+*/
+
+bool solve(int n,int x,int y,int tempo){
+    tempo -= min(x,y);
+    return 1 + tempo/x + tempo/y>=n;
 }
 
-
-int busca(int n,int x,int y){
-    int l = 0,r = n*max(x,y);
-    int mid;
-    int ans=0;
-    while(l<r){
+long long busca(int n,int x,int y){
+    long long l = min(x,y),r = max(x,y)*n;
+    long long mid;
+    while(l<=r){
         mid = l+(r-l)/2;
-        if(check(n,x,y,mid)){
-            r = mid;
-
-        } 
+        if(solve(n,x,y,mid))r=mid-1;
         else l = mid + 1;
     }
+    return l;
 }
 
 
 int main() {_
-    int n,x,y;
-    cin >> n >> x >> y;
-    cout <<busca(n,x,y)<<endl;
+    int n,x,y;cin >> n >> x >> y;
+    cout<<busca(n,x,y)<<endl;
     return 0;
 }

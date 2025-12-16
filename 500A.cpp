@@ -5,34 +5,35 @@ using namespace std;
 #define mp make_pair
 #define all(x) (x).begin(), (x).end()
 #define fo(i,n) for(int i = 0; i < n; i++)
-#define _ ios_base::sync_with_stdio(0);cin.tie(0);
+#define _ ios_base::sync_with_stdio(0); cin.tie(0);
 #define endl '\n'
 
-const int MAX = 3e4 + 5;
-vector<vector<int>>grafo(MAX);
-vector<bool>vis(MAX);
-bool tag = false;
-void dfs(int v,int x){
-    vis[v]=true;
-    if(v == x){
-        tag = true;
+bool achou = false;
+void dfs(vector<vector<int>>&grafo,vector<bool>&vis,int u,int t){
+    vis[u]=true;
+    if(u==t){
+        achou = true;
+        return;
     }
-    for(auto u : grafo[v]){
-        if(!vis[u]){
-            dfs(u,x);
+    for(int v : grafo[u]){
+        if(!vis[v]){
+            dfs(grafo,vis,v,t);
         }
     }
 }
 
+
+
 int main() {_
-    int n,t;
-    cin >> n >> t;
+    int n,t;cin >> n >> t;
+    vector<vector<int>>grafo(n+1);
+    vector<bool>vis(n+1,false);
     fo(i,n-1){
         int x;cin >> x;
-        grafo[i+1].push_back(x+i+1);
+        grafo[i+1].push_back(x+(i+1));
     }
-    dfs(1,t);
-    if(tag) cout <<"YES"<<endl;
+    dfs(grafo,vis,1,t);
+    if(achou)cout <<"YES"<<endl;
     else cout <<"NO"<<endl;
     return 0;
 }
