@@ -41,6 +41,15 @@ void solve(){
 }
 
 
+
+void solve(){
+    int n;cin >> n;
+    vector<int>a(n);
+    fo(i,n)cin >> a[i];
+    solve();
+
+}
+
 int main() {_
     int t;cin >> t;
     while(t--)solve();
